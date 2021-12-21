@@ -11,9 +11,8 @@ public class StringReverseController {
     @Autowired
     private StringReverseServiceImpl stringReverseService;
 
-    @GetMapping(value = "/rev")
+    @PostMapping(value = "/rev")
     public @ResponseBody String reverse(@RequestParam("param") String param, @RequestHeader HttpHeaders httpHeaders) {
-        System.out.println(httpHeaders.toString());
         return stringReverseService.reverseString(param);
     }
 }
